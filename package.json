@@ -1,0 +1,56 @@
+{
+  "_from": "alternative-pdf-combine",
+  "_id": "alternative-pdf-combine@1.1.6",
+  "_inBundle": false,
+  "_integrity": "sha1-WAV2quT62dP5YGFY78i28EnERFU=",
+  "_location": "/alternative-pdf-combine",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "alternative-pdf-combine",
+    "name": "alternative-pdf-combine",
+    "escapedName": "alternative-pdf-combine",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/alternative-pdf-combine/-/alternative-pdf-combine-1.1.6.tgz",
+  "_shasum": "580576aae4fad9d3f9606158efc8b6f049c44455",
+  "_spec": "alternative-pdf-combine",
+  "_where": "/Users/scoob/inr-server",
+  "author": {
+    "name": "Martin Heidegger",
+    "email": "martin.heidegger@gmail.com"
+  },
+  "bin": {
+    "alternative-pdf-combine": "bin/alternative-pdf-combine"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "command-exists": "^1.0.1"
+  },
+  "deprecated": false,
+  "description": "Alternative approach to combine pdf's (doesn't support windows, requires poppler on linux)",
+  "devDependencies": {
+    "standard": "^7.1.1",
+    "tap": "^5.7.2"
+  },
+  "keywords": [
+    "pdf",
+    "combine"
+  ],
+  "license": "ISC",
+  "main": "combinePdfs.js",
+  "name": "alternative-pdf-combine",
+  "scripts": {
+    "lint": "standard",
+    "quick": "tap -- test/combinePdfs.js",
+    "test": "standard && tap -- test/combinePdfs.js"
+  },
+  "version": "1.1.6"
+}
