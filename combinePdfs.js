@@ -10,40 +10,24 @@ function run (cmd, args, output, inputControl, debug, callback) {
       return '"' + arg.replace(/"/g, '\\"').replace(/\n/gm, '\\n') + '"';
     }).join(' '));
   }
-  console.log('here1');
   var process = spawn(cmd, args);
-  console.log('here2');
   var error = '';
-  console.log('here3');
   process.stderr.on('data', function (data) {
-    console.log('stderr hit');
     error += data;
   });
-  console.log('here4');
   process.on('exit', function (code) {
-    console.log('exit hit');
     if (code === 0) {
-      console.log('asdf1');
       fs.readFile(output, function (err, buffer) {
-        console.log('inside readFile callback');
         inputControl.forEach(function (input) {
-          console.log('clean up time');
-          console.log(input.cleanup);
           input.cleanup();
-          console.log('did we clean up?');
         });
-        console.log('asdf4');
         fs.unlink(output, function() { return null; });
-        console.log('asdf5');
         callback(err, buffer);
       });
-      console.log('asdf2');
     } else {
-      console.log('asdf10');
       callback(new Error(error));
     }
   });
-  console.log('here5');
 }
 
 function combinePdfs (buffers, debug, callback) {
@@ -84,8 +68,6 @@ function combinePdfs (buffers, debug, callback) {
     }
     var output = tmpFileName();
     if (pdfUnite) {
-      console.log('inputControl: ');
-      console.log(inputControl);
       return run(pdfUnite, input.concat([output]), output, inputControl, debug, callback);
     } else {
       console.log('please install poppler to use combine-pdfs');
