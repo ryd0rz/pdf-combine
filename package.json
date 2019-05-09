@@ -1,6 +1,6 @@
 {
   "name": "pdf-combine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "There are various tools in the npm that allow for combining pdf's this tool is limited to Mac & Linux but it should work on macs out-of-the-box and on linux by using poppler`s `pdfunite`. This tool is by no means well tested use on own risk!",
   "main": "combinePdfs.js",
   "directories": {
