@@ -1,24 +1,10 @@
-# alternative-pdf-combine
+# pdf-combine
 
-There are various tools in the npm that allow for combining pdf's this tool is limited to Mac & Linux but it
-should work on macs out-of-the-box and on linux by using poppler`s `pdfunite`. This tool is by no means well
-tested use on own risk!
+Setup:
 
+brew install poppler
 
-## As a command line tool
-
-Install it using `npm i alternative-pdf-combine -g` and then run 
-
-```bash
-$ Usage: alternative-pdf-combine out.pdf in1.pdf ... inx.pdf
-```
-
-
-To enable a debug output you can set the environment variable `DEBUG_ALTERNATIVE_PDF_COMBINE=true`.
-
-## As a JavaScript package
-
-After installing the package with `npm i alternative-pdf-combine` you can use it like this.
+npm install pdf-combine
 
 ```javascript
 
@@ -45,15 +31,4 @@ combinePdfs([
 
 ```
 
-## Mac & PDF Unite
-
-By default, on Mac, it will try to use mac's pdf combination. But it will use `pdfunite` if installed on a mac since
-its way faster and creates smaller files. You can install pdfunite on mac using [homebrew](http://brew.sh/): `brew install poppler`
-
-If you wish to always use Mac's pdf combination solution set the environment variable:
-`ALTERNATIVE_PDF_COMBINE_OVERRIDE_PDFUNITE=true`
-
-
-## Contribution
-
-Contributions and improvements welcome!
+This uses pdfUnite from the poppler package
